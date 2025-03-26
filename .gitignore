@@ -4,3 +4,6 @@ __pycache__
 
 tests/*
 results/*
+checkpoints/*
+
+!.gitkeep

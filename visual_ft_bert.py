@@ -50,11 +50,7 @@ if __name__ == '__main__':
 	print('dataset',len(new_df),type(new_df))
 	print('df test:',(new_df['seq'][0]))
 
-	
-	dir_to_save = os.path.join('/Users','melodyu','Desktop','code.nosync','bert_classication','model')
-	filename_model = os.path.join(dir_to_save, 'bert_test_300.pth')  #model_decoder_nocut_90/model_de_whole_1024_145/model_apom15_de_256_100/model_apomND_de__qf_1024_100/model_simple_hiddim_50/model_Qfeature100_50/model_50/model_patchembed_nosinglelabel_nocut_30/model_patchembed_nosinglelabel_30/model_patchembed_30/model_newmat_prob__30/model_newmat_30/ model_orinewlabel30 / model_imgembed_16_30
-
-	model=(torch.load(filename_model))
+	model=(torch.load(checkpoint_path))
 	model.eval()
   
 	# ambigous / destructive / benefical / progrowth 1=yes ; 0=the opposite/other
