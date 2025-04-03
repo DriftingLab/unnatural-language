@@ -3,7 +3,7 @@ import torch
 from transformers import BertTokenizer
 import pandas as pd
 
-from settings import *
+from python_modules.settings import *
 
 device = "mps" if torch.backends.mps.is_available() else "cpu"
 print(device)

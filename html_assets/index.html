@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PDF Highlighter</title>
+	<link rel="stylesheet" type="text/css" href="/html_assets/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>PDF Highlighter</h1>
+		
+		<div class="upload-section">
+			<h2>Upload PDF</h2>
+			<input type="file" id="pdfFileInput" accept=".pdf" />
+			
+			<button id="processBtn" disabled>Process PDF</button>
+			<div id="status" class="status"></div>
+			<div id="loading" class="loading"></div>
+		</div>
+		
+		<div class="pdf-container">
+			<div class="pdf-viewer">
+				<div id="originalPdfContainer"></div>
+			</div>
+			
+			<div class="pdf-viewer">
+				<div id="highlightedPdfContainer"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
+	<script src="/html_assets/process.js"></script>
+</body>
+</html>
