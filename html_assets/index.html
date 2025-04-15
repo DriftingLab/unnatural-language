@@ -3,10 +3,62 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PDF Highlighter</title>
-	<link rel="stylesheet" type="text/css" href="/html_assets/style.css">
+	<title>(Un)Natural Language</title>
+	<link rel="stylesheet" type="text/css" href="/html_assets/css/style.css">
 </head>
 <body>
+
+	<nav>
+		<a onclick="switchPage('title-page')">Document</a>
+		<a onclick="switchPage('api-page')">API</a>
+		<a onclick="switchPage('about-page')">About</a>
+	</nav>
+
+	<div class="container" id="title-page">
+		<div id="background-container">
+			<img id="background" src="/html_assets/images/main_bg.png">
+		</div>
+		<h1 id="title">(Un)Natural Language</h1>
+		<p id="intro">An art software captures underlying ecological sabotage from documents</p>
+		<p id="author">Mou Peijing</p>
+	</div>
+
+	<div class="container" id="api-page">
+		<div id="background-container">
+			<img id="background" src="/html_assets/images/about_api_bg.png">
+		</div>
+		<div class="about-element" id="about-title">
+			<p>(Un)Natural Language</p>
+		</div>
+		<div class="about-element" id="api-main">
+			<iframe src="https://evaluate-metric-bertscore.hf.space"></iframe>
+		</div>
+		<div class="about-element" id="api-link">
+			<p>Github Link:</p>
+		</div>
+	</div>
+
+	<div class="container" id="about-page">
+		<div id="background-container">
+			<img id="background" src="/html_assets/images/about_api_bg.png">
+		</div>
+		<div class="about-element" id="about-title">
+			<p>(Un)Natural Language</p>
+		</div>
+		<div class="about-element" id="about-main">
+			<p>This is an art software that analyses public project documents through an ecological perspective. It is an Eco-linguistic system that explores the intersection of economics, language, and machine learning, unveiling the underlying language ideology in many infrastructure documents through an ambitious attempt to capture those pro-growth and greenwash sentences. This project builds a homemade dataset and utilizes a fine-tuned model to analyse formal documents like BP (business planning), IPO (initial public offering), and EA (environmental assessment). As a result, the software will automatically return a text analysis report. This system is trying to shift the focus of upgrowth economics to postgrowth ecological economics through the alternative approach to deploying machine learning technology and a language perspective.</p>
+		</div>
+		<div class="about-element" id="about-credit">
+			<p>Credit</p>
+		</div>
+		<div class="about-element" id="about-empty">
+			<p></p>
+		</div>
+		<div class="about-element" id="about-lexicon">
+			<p>Lexicon<br><br>Pro-growth<br>Greenwash<br>Eco-linguistic<br>Natural Language<br>(Un)Natural Language</p>
+		</div>
+	</div>
+
 	<div class="container">
 		<h1>PDF Highlighter</h1>
 		
@@ -31,6 +83,11 @@
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
-	<script src="/html_assets/process.js"></script>
+	<script src="/html_assets/js/process.js"></script>
+	<script src="/html_assets/js/main.js"></script>
+
+	<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.19.1/gradio.js"></script>
+	<gradio-app src="https://evaluate-metric-bertscore.hf.space"></gradio-app>
+
 </body>
 </html>

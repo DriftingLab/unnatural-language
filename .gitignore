@@ -5,5 +5,6 @@ __pycache__
 tests/*
 results/*
 checkpoints/*
+local_files/
 
 !.gitkeep

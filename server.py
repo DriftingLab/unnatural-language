@@ -5,7 +5,7 @@ import uuid
 import pandas as pd
 from werkzeug.utils import secure_filename
 
-from python_modules.pdf_visualizer import highlight_pdf
+from python_modules.pdf_visualizer import custom_highlight_pdf
 from python_modules.settings import *
 
 REMOVE_FILE = True
@@ -30,9 +30,9 @@ def process_pdf():
 	
 	try:
 	
-		df = pd.read_csv(save_pg_path)
+		df = pd.read_csv(save_pg_path, dtype={'pro-growth': float})
 		sentences = df["seq"].tolist()
-		sentences = sentences[:10]
+		values = df["pro-growth"].tolist()
 
 		unique_id = str(uuid.uuid4())
 		filename = secure_filename(f"{unique_id}_{file.filename[:-4]}")
@@ -41,7 +41,7 @@ def process_pdf():
 		output_path = f"results/{filename}.pdf"
 		
 		file.save(input_path)
-		highlight_pdf(filename, sentences)
+		custom_highlight_pdf(filename, sentences, values)
 		 
 		response = make_response(send_file(
 			output_path,
