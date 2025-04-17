@@ -3,6 +3,8 @@ import pandas as pd
 from python_modules.settings import *
 
 def apply_transparency(rgb, transparency):
+
+	transparency = transparency * 0.8 + 0.2
 	
 	r = (1 - transparency) + rgb[0] * transparency
 	g = (1 - transparency) + rgb[1] * transparency

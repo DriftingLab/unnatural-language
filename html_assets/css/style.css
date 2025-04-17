@@ -16,6 +16,8 @@ nav {
 	height: 7.4074vh;
 
 	text-align: right;
+
+	z-index: 10;
 }
 
 nav a {
@@ -239,25 +241,45 @@ nav a {
 
 /* ################################################################################ */
 
-
-.upload-section {
-	background-color: #f5f5f5;
-	padding: 20px;
-	border-radius: 5px;
+.p5-canvas-container {
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
+
 .pdf-container {
+
+	width: 80vw;
+	height: 100%;
+
+	margin: auto;
+
 	display: flex;
-	gap: 20px;
+	justify-content: space-between;
+
+	z-index: 2;
 }
 
 .pdf-viewer {
-	flex: 1;
-	border: 1px solid #ddd;
-	border-radius: 5px;
+	width: 37.5vw;
 	height: 80vh;
+	margin-top: 10vh;
+
+	border: 10px solid #0094be;
 	overflow: auto;
-	display: flex;
 	flex-direction: column;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	z-index: 2;
+}
+
+.pdf-viewer::-webkit-scrollbar {
+	display: none;
 }
 
 .pdf-canvas {
@@ -267,6 +289,7 @@ nav a {
 	margin: 0 auto;
 	border: 1px solid #ddd;
 }
+
 .sentence-input {
 	width: 100%;
 	padding: 10px;
@@ -274,17 +297,21 @@ nav a {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
+
 .sentences-container {
 	margin-top: 10px;
 }
+
 .sentence-item {
 	display: flex;
 	align-items: center;
 	margin-bottom: 5px;
 }
+
 .sentence-item button {
 	margin-left: 10px;
 }
+
 button {
 	padding: 8px 15px;
 	background-color: #4285f4;

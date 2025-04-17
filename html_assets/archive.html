@@ -1,0 +1,25 @@
+
+
+	<div class="container" id="document-page">
+		<div id="background-container">
+			<img id="background" src="/html_assets/images/blurred_bg.jpg">
+		</div>
+		<div class="upload-section">
+			<h2>Upload PDF</h2>
+			<input type="file" id="pdfFileInput" accept=".pdf" />
+			
+			<button id="processBtn" disabled>Process PDF</button>
+			<div id="status" class="status"></div>
+			<div id="loading" class="loading"></div>
+		</div>
+		
+		<div class="pdf-container">
+			<div class="pdf-viewer">
+				<div id="originalPdfContainer"></div>
+			</div>
+			
+			<div class="pdf-viewer">
+				<div id="highlightedPdfContainer"></div>
+			</div>
+		</div>
+	</div>

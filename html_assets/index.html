@@ -9,7 +9,8 @@
 <body>
 
 	<nav>
-		<a onclick="switchPage('title-page')">Document</a>
+		<a onclick="switchPage('title-page')">Home</a>
+		<a onclick="switchPage('document-page')">Document</a>
 		<a onclick="switchPage('api-page')">API</a>
 		<a onclick="switchPage('about-page')">About</a>
 	</nav>
@@ -21,6 +22,22 @@
 		<h1 id="title">(Un)Natural Language</h1>
 		<p id="intro">An art software captures underlying ecological sabotage from documents</p>
 		<p id="author">Mou Peijing</p>
+	</div>
+
+	<div class="container" id="document-page">
+		<div id="background-container">
+			<img id="background" src="/html_assets/images/blurred_bg.jpg">
+		</div>
+		<div class="p5-canvas-container" id="canvas-container"></div>
+		<div class="pdf-container">
+			<div class="pdf-viewer">
+				<div id="originalPdfContainer"></div>
+			</div>
+			
+			<div class="pdf-viewer">
+				<div id="highlightedPdfContainer"></div>
+			</div>
+		</div>
 	</div>
 
 	<div class="container" id="api-page">
@@ -59,35 +76,14 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<h1>PDF Highlighter</h1>
-		
-		<div class="upload-section">
-			<h2>Upload PDF</h2>
-			<input type="file" id="pdfFileInput" accept=".pdf" />
-			
-			<button id="processBtn" disabled>Process PDF</button>
-			<div id="status" class="status"></div>
-			<div id="loading" class="loading"></div>
-		</div>
-		
-		<div class="pdf-container">
-			<div class="pdf-viewer">
-				<div id="originalPdfContainer"></div>
-			</div>
-			
-			<div class="pdf-viewer">
-				<div id="highlightedPdfContainer"></div>
-			</div>
-		</div>
-	</div>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 	<script src="/html_assets/js/process.js"></script>
 	<script src="/html_assets/js/main.js"></script>
+	<script src="/html_assets/js/animate.js"></script>
 
 	<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.19.1/gradio.js"></script>
-	<gradio-app src="https://evaluate-metric-bertscore.hf.space"></gradio-app>
+	<!-- <gradio-app src="https://evaluate-metric-bertscore.hf.space"></gradio-app> -->
 
 </body>
 </html>
