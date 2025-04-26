@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<nav>
+	<nav id="nav">
 		<a onclick="switchPage('title-page')">Home</a>
 		<a onclick="switchPage('document-page')">Document</a>
 		<a onclick="switchPage('api-page')">API</a>
@@ -29,12 +29,15 @@
 			<img id="background" src="/html_assets/images/blurred_bg.jpg">
 		</div>
 		<div class="p5-canvas-container" id="canvas-container"></div>
-		<div class="pdf-container">
-			<div class="pdf-viewer">
+		<div id="pdf-container" style="display: none;">
+			<div id="pdf-close-button-container" onclick="closePDFViewer();">
+				<img id="pdf-close-button" src="/html_assets/images/close.png">
+			</div>
+			<div id="originalPdfViewer">
 				<div id="originalPdfContainer"></div>
 			</div>
 			
-			<div class="pdf-viewer">
+			<div id="highlightedPdfViewer">
 				<div id="highlightedPdfContainer"></div>
 			</div>
 		</div>

@@ -53,27 +53,29 @@ let isScrolling = false;
 let activeContainer = null;
 
 function initSyncScroll() {
-	setupScrollSync(document.getElementById('originalPdfContainer'));
-	setupScrollSync(document.getElementById('highlightedPdfContainer'));
-}
+	const originalScrollContainer = document.getElementById('originalPdfViewer');
+	const highlightedScrollContainer = document.getElementById('highlightedPdfViewer');
 
-function setupScrollSync(container) {
-	
-	const scrollContainer = container.closest('.pdf-viewer');
-	
-	scrollContainer.addEventListener('scroll', function() {
-		if (isScrolling && activeContainer !== scrollContainer) {
+	originalScrollContainer.addEventListener('scroll', function() {
+		if (isScrolling && activeContainer !== originalScrollContainer) {
 			return;
 		}
-		activeContainer = scrollContainer;
+		activeContainer = originalScrollContainer;
 		isScrolling = true;
-		const otherContainer = scrollContainer.id === 'originalPdfContainer' || 
-							  scrollContainer.closest('.pdf-viewer').contains(document.getElementById('originalPdfContainer'))
-			? document.getElementById('highlightedPdfContainer').closest('.pdf-viewer')
-			: document.getElementById('originalPdfContainer').closest('.pdf-viewer');
-		
-		otherContainer.scrollTop = scrollContainer.scrollTop;
-		
+		highlightedScrollContainer.scrollTop = originalScrollContainer.scrollTop;
+		setTimeout(() => {
+			isScrolling = false;
+			activeContainer = null;
+		}, 50);
+	});
+
+	highlightedScrollContainer.addEventListener('scroll', function() {
+		if (isScrolling && activeContainer !== highlightedScrollContainer) {
+			return;
+		}
+		activeContainer = highlightedScrollContainer;
+		isScrolling = true;
+		originalScrollContainer.scrollTop = highlightedScrollContainer.scrollTop;
 		setTimeout(() => {
 			isScrolling = false;
 			activeContainer = null;
