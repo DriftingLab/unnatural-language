@@ -16,10 +16,11 @@
 	</nav>
 
 	<div class="container" id="title-page">
+		<div id="title-canvas-container"></div>
 		<div id="background-container">
-			<img id="background" src="/html_assets/images/main_bg.png">
+			<img id="background" src="/html_assets/images/noise_bg_overlay.png">
 		</div>
-		<h1 id="title">(Un)Natural Language</h1>
+		<h1 id="title" onclick="switchPage('document-page')">(Un)Natural Language</h1>
 		<p id="intro">An art software captures underlying ecological sabotage from documents</p>
 		<p id="author">Mou Peijing</p>
 	</div>
@@ -28,7 +29,7 @@
 		<div id="background-container">
 			<img id="background" src="/html_assets/images/blurred_bg.jpg">
 		</div>
-		<div class="p5-canvas-container" id="canvas-container"></div>
+		<div id="doc-canvas-container"></div>
 		<div id="pdf-container" style="display: none;">
 			<div id="pdf-close-button-container" onclick="closePDFViewer();">
 				<img id="pdf-close-button" src="/html_assets/images/close.png">
@@ -83,7 +84,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 	<script src="/html_assets/js/process.js"></script>
 	<script src="/html_assets/js/main.js"></script>
-	<script src="/html_assets/js/animate.js"></script>
+	<script src="/html_assets/js/titleAnimation.js"></script>
+	<script src="/html_assets/js/docAnimation.js"></script>
 
 	<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.19.1/gradio.js"></script>
 	<!-- <gradio-app src="https://evaluate-metric-bertscore.hf.space"></gradio-app> -->
