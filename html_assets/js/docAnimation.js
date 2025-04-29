@@ -1,4 +1,5 @@
 var viewerOpened = false;
+const docNameElement = document.querySelector("#name-tab p");
 
 const docSketch = function(s) {
 	const numRows = 5;
@@ -10,7 +11,7 @@ const docSketch = function(s) {
 		"Morocco Water Security and Resilience Program",
 		"Indonesia Universal Health Coverage Development Policy Loan",
 		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan",
-		"Viet Nam Binh Duong Province’s Water Environment Improvement Project",
+		"Viet Nam Binh Duong Province's Water Environment Improvement Project",
 		"Tuvalu Pacific Islands Regional Oceanscape Program—Second Phase For Economic Resilience",
 		"Türkiye Flood And Drought Management Project",
 		"Turkey Resilient Landscape Integration Project (TULIP)",
@@ -72,7 +73,41 @@ const docSketch = function(s) {
 		"poland",
 		"peru",
 		"paraguay"
-	]
+	];
+
+	const docNames = [
+		"Morocco (P179192)",
+		"Indonesia (P500689)",
+		"Brazil (P179182)",
+		"Viet Nam (P173716)",
+		"Tuvalu",
+		"Türkiye",
+		"Turkey",
+		"Suriname",
+		"Albania",
+		"Argentine",
+		"Brazil",
+		"Brazil",
+		"Chile",
+		"China",
+		"Chile",
+		"China",
+		"India",
+		"India",
+		"India",
+		"India",
+		"India",
+		"Kyrgyz",
+		"Sri Lanka",
+		"Mali",
+		"Pakistan",
+		"Panama",
+		"Somalia",
+		"Senegal",
+		"Poland",
+		"Peru",
+		"Paraguay"
+	];
 
 	var currentNation = 0;
 
@@ -140,6 +175,7 @@ const docSketch = function(s) {
 		while (totalWidth < 2 * s.width) {
 			const text = textItems[currentNation];
 			const nation = nations[currentNation];
+			const docName = docNames[currentNation];
 			currentNation = (currentNation + 1) % nations.length;
 			const boxWidth = s.textWidth(text) + padding * 2;
 			const boxHeight = fontSize + padding * 2;
@@ -154,7 +190,8 @@ const docSketch = function(s) {
 				width: boxWidth,
 				height: boxHeight,
 				color: boxColor,
-				nation: nation
+				nation: nation,
+				name: docName
 			};
 			
 			row.boxes.push(box);
@@ -181,6 +218,7 @@ const docSketch = function(s) {
 				row.boxes.shift();
 				const text = textItems[currentNation];
 				const nation = nations[currentNation];
+				const docName = docNames[currentNation];
 				currentNation = (currentNation + 1) % nations.length;
 				
 				const boxWidth = s.textWidth(text) + padding * 2;
@@ -194,7 +232,8 @@ const docSketch = function(s) {
 					width: boxWidth,
 					height: boxHeight,
 					color: boxColor,
-					nation: nation
+					nation: nation,
+					name: docName
 				};
 				
 				row.boxes.push(box);
@@ -204,6 +243,7 @@ const docSketch = function(s) {
 				row.boxes.shift();
 				const text = textItems[currentNation];
 				const nation = nations[currentNation];
+				const docName = docNames[currentNation];
 				currentNation = (currentNation + 1) % nations.length;
 		
 				const boxWidth = s.textWidth(text) + padding * 2;
@@ -217,7 +257,8 @@ const docSketch = function(s) {
 					width: boxWidth,
 					height: boxHeight,
 					color: boxColor,
-					nation: nation
+					nation: nation,
+					name: docName
 				};
 				
 				row.boxes.push(box);
@@ -288,11 +329,13 @@ const docSketch = function(s) {
 				renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
 				renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
 				renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
+				docNameElement.textContent = currentHover.name;
 			}
 			else {
 				renderPDF(`./pdfs/indonesia.pdf`, originalPdfContainer);
 				renderPDF(`./pdfs/indonesia_pg.pdf`, highlightedPdfContainer1);
 				renderPDF(`./pdfs/indonesia_ed.pdf`, highlightedPdfContainer2);
+				docNameElement.textContent = currentHover.name;
 			}
 		}
 	}
