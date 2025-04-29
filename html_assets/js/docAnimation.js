@@ -7,20 +7,77 @@ const docSketch = function(s) {
 	let rows = [];
 
 	const textItems = [
-		"Morocco Water Security and Resilience Program", 
+		"Morocco Water Security and Resilience Program",
 		"Indonesia Universal Health Coverage Development Policy Loan",
-		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan"
+		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan",
+		"Viet Nam Binh Duong Province’s Water Environment Improvement Project",
+		"Tuvalu Pacific Islands Regional Oceanscape Program—Second Phase For Economic Resilience",
+		"Türkiye Flood And Drought Management Project",
+		"Turkey Resilient Landscape Integration Project (TULIP)",
+		"Suriname Saramacca Canal System Rehabilitation Project",
+		"Albania Clean And Resilient Environment For Blue Sea Project",
+		"Argentine Republic Climate Resilient Infrastructure For Urban Flood Risk Management Project",
+		"Brazil The Espírito Santo Water Security Management Project",
+		"Brazil Ceará Water Security And Governance Project",
+		"Chile Water Transition Program",
+		"China Yangtze River Protection And Ecological Restoration Program",
+		"Chile Water Transition Program",
+		"China Yellow River Basin Ecological Protection And Environmental Pollution Control Program",
+		"India Shimla-Himachal Pradesh Water Supply And Sewerage Services Improvement",
+		"India Assam Inland Water Transport Project",
+		"India Rejuvenating Watersheds For Agricultural Resilience Through Innovative Development",
+		"India Tamil Nadu Climate Resilient Urban Development Program",
+		"India Uttarakhand Climate Responsive Rainfed Farming Project",
+		"Kyrgyz Republic Water Supply And Sanitation Universal Access Program",
+		"Sri Lanka Climate Resilience Multiphase Programmatic Approach",
+		"Mali Mali Water Security Project",
+		"Pakistan Second Karachi Water And Sewerage Services Improvement Project",
+		"Panama Support For The National Indigenous Peoples Development Plan Project",
+		"Somalia Somali Sustainable Fisheries Development “Badmaal” Project",
+		"Senegal Integrated Water Security And Sanitation Project",
+		"Poland Odra-Visula Flood Management Project",
+		"Peru  Irrigation For Climate Resilient Agriculture Project",
+		"Paraguay Asuncion Riverfront Urban Resilience Project"
 	];
 
 	const nations = [
 		"morocco",
 		"indonesia",
 		"brazil",
+		"viet nam",
+		"tuvalu",
+		"türkiye",
+		"turkey",
+		"suriname",
+		"albania",
+		"argentine",
+		"brazil",
+		"brazil",
+		"chile",
+		"china",
+		"chile",
+		"china",
+		"india",
+		"india",
+		"india",
+		"india",
+		"india",
+		"kyrgyz",
+		"sri",
+		"mali",
+		"pakistan",
+		"panama",
+		"somalia",
+		"senegal",
+		"poland",
+		"peru",
+		"paraguay"
 	]
+
+	var currentNation = 0;
 
 	let fontSize;
 	let padding;
-	const margin = 20;
 
 	let pdfViewer;
 
@@ -81,9 +138,9 @@ const docSketch = function(s) {
 		let totalWidth = 0;
 
 		while (totalWidth < 2 * s.width) {
-			const pick = s.int(s.random(0, textItems.length));
-			const text = textItems[pick];
-			const nation = nations[pick];
+			const text = textItems[currentNation];
+			const nation = nations[currentNation];
+			currentNation = (currentNation + 1) % nations.length;
 			const boxWidth = s.textWidth(text) + padding * 2;
 			const boxHeight = fontSize + padding * 2;
 			
@@ -122,9 +179,9 @@ const docSketch = function(s) {
 		if (row.direction > 0) {
 			while (row.boxes.length > 0 && row.boxes[0].x > s.width) {
 				row.boxes.shift();
-				const pick = s.int(s.random(0, textItems.length));
-				const text = textItems[pick];
-				const nation = nations[pick];
+				const text = textItems[currentNation];
+				const nation = nations[currentNation];
+				currentNation = (currentNation + 1) % nations.length;
 				
 				const boxWidth = s.textWidth(text) + padding * 2;
 				const boxHeight = fontSize + padding * 2;
@@ -145,9 +202,9 @@ const docSketch = function(s) {
 		} else {
 			while (row.boxes.length > 0 && row.boxes[0].x + row.boxes[0].width < 0) {
 				row.boxes.shift();
-				const pick = s.int(s.random(0, textItems.length));
-				const text = textItems[pick];
-				const nation = nations[pick];
+				const text = textItems[currentNation];
+				const nation = nations[currentNation];
+				currentNation = (currentNation + 1) % nations.length;
 		
 				const boxWidth = s.textWidth(text) + padding * 2;
 				const boxHeight = fontSize + padding * 2;
@@ -227,9 +284,16 @@ const docSketch = function(s) {
 			pdfViewer.style.display = 'block';
 			nav.style.display = 'none';
 			viewerOpened = true;
-			renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
-			renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
-			renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
+			if (currentHover.nation == 'brazil' || currentHover.nation == 'indonesia' || currentHover.nation == 'morocco') {
+				renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
+				renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
+				renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
+			}
+			else {
+				renderPDF(`./pdfs/indonesia.pdf`, originalPdfContainer);
+				renderPDF(`./pdfs/indonesia_pg.pdf`, highlightedPdfContainer1);
+				renderPDF(`./pdfs/indonesia_ed.pdf`, highlightedPdfContainer2);
+			}
 		}
 	}
 
