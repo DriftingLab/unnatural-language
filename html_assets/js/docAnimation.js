@@ -7,12 +7,16 @@ const docSketch = function(s) {
 	let rows = [];
 
 	const textItems = [
-		"Morocco Water Security and Resilience Program",
-		"Indonesia Universal Health Coverage Development",
-		"Uttarakhand Climate Responsive Rainfed Farming Project",
-		"Irrigation for Climate Resilient Agriculture",
-		"Indonesia Universal Health Coverage Development Policy Loan"
+		"Morocco Water Security and Resilience Program", 
+		"Indonesia Universal Health Coverage Development Policy Loan",
+		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan"
 	];
+
+	const nations = [
+		"morocco",
+		"indonesia",
+		"brazil",
+	]
 
 	let fontSize;
 	let padding;
@@ -77,7 +81,9 @@ const docSketch = function(s) {
 		let totalWidth = 0;
 
 		while (totalWidth < s.width + 1000) {
-			const text = s.random(textItems);
+			const pick = s.int(s.random(0, textItems.length));
+			const text = textItems[pick];
+			const nation = nations[pick];
 			const boxWidth = s.textWidth(text) + padding * 2;
 			const boxHeight = fontSize + padding * 2;
 			
@@ -90,7 +96,8 @@ const docSketch = function(s) {
 				x,
 				width: boxWidth,
 				height: boxHeight,
-				color: boxColor
+				color: boxColor,
+				nation: nation
 			};
 			
 			row.boxes.push(box);
@@ -115,7 +122,9 @@ const docSketch = function(s) {
 		if (row.direction > 0) {
 			while (row.boxes.length > 0 && row.boxes[0].x > s.width) {
 				row.boxes.shift();
-				const text = s.random(textItems);
+				const pick = s.int(s.random(0, textItems.length));
+				const text = textItems[pick];
+				const nation = nations[pick];
 				
 				const boxWidth = s.textWidth(text) + padding * 2;
 				const boxHeight = fontSize + padding * 2;
@@ -127,7 +136,8 @@ const docSketch = function(s) {
 					x: newX,
 					width: boxWidth,
 					height: boxHeight,
-					color: boxColor
+					color: boxColor,
+					nation: nation
 				};
 				
 				row.boxes.push(box);
@@ -135,7 +145,9 @@ const docSketch = function(s) {
 		} else {
 			while (row.boxes.length > 0 && row.boxes[0].x + row.boxes[0].width < 0) {
 				row.boxes.shift();
-				const text = s.random(textItems);
+				const pick = s.int(s.random(0, textItems.length));
+				const text = textItems[pick];
+				const nation = nations[pick];
 		
 				const boxWidth = s.textWidth(text) + padding * 2;
 				const boxHeight = fontSize + padding * 2;
@@ -147,7 +159,8 @@ const docSketch = function(s) {
 					x: newX,
 					width: boxWidth,
 					height: boxHeight,
-					color: boxColor
+					color: boxColor,
+					nation: nation
 				};
 				
 				row.boxes.push(box);
@@ -214,6 +227,9 @@ const docSketch = function(s) {
 			pdfViewer.style.display = 'block';
 			nav.style.display = 'none';
 			viewerOpened = true;
+			renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
+			renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
+			renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
 		}
 	}
 

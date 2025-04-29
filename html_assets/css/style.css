@@ -312,7 +312,7 @@ nav a {
 	position: absolute;
 
 	width: 65vh;
-	height: 85vh;
+	height: 80vh;
 	top: 10vh;
 
 	border: 10px solid #0094be;
@@ -462,9 +462,8 @@ button:hover {
 	margin-left: 0;
 }
 
-.upArrow, .downArrow {
+.downArrow {
 	position: absolute;
-	left: calc((65vh - 40px) / 2);
 	width: 40px;
 	height: 40px;
 	z-index: 100;
@@ -476,17 +475,21 @@ button:hover {
 	100% { opacity: 0.5; }
 }
 
-.upArrow {
-	top: 10px;
-	display: none;
-}
 
 .downArrow {
-	bottom: 10px;
+	bottom: calc(5vh - 20px);
 }
 
-.upArrowImg, .downArrowImg {
+.downArrowImg {
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+#originalArrow {
+	left: calc(47.5vw - 30px - 31.5vh);
+}
+
+#highlightedArrow {
+	left: calc(52.5vw + 10px + 31.5vh);
 }
