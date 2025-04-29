@@ -117,7 +117,9 @@ nav a {
 }
 
 #title:hover {
-	opacity: 80%;
+	background: url("../images/title_bg_hover.png");
+	background-size: cover;
+	color: #34606f;
 }
 
 #intro {
@@ -298,21 +300,20 @@ nav a {
 
 	width: 100vw;
 	height: 100%;
+	position: relative;
 
-	padding-left: 10vw;
-	padding-right: 10vw;
-
-	background-color: #00000088;
+	background-color: #02213388;
 
 	z-index: 1;
 }
 
 #originalPdfViewer, #highlightedPdfViewer {
 	display: inline-block;
+	position: absolute;
 
-	width: 37.5vw;
-	height: 80vh;
-	margin-top: 10vh;
+	width: 65vh;
+	height: 85vh;
+	top: 10vh;
 
 	border: 10px solid #0094be;
 	overflow: auto;
@@ -323,8 +324,12 @@ nav a {
 	z-index: 2;
 }
 
+#originalPdfViewer {
+	left: calc((95vw - 130vh - 40px) / 2);
+}
+
 #highlightedPdfViewer {
-	margin-left: 5vw;
+	left: calc(52.5vw + 10px);
 }
 
 #originalPdfViewer::-webkit-scrollbar, #highlightedPdfViewer::-webkit-scrollbar {
@@ -398,4 +403,90 @@ button:hover {
 @keyframes loading {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
+}
+
+/* ////////////////////////////////// */
+
+.tab {
+	display: inline-block;
+	position: absolute;
+	bottom: 90vh;
+
+	height: 1.5vh;
+}
+
+.tab p {
+	display: block;
+
+	margin-top: 0;
+	margin-bottom: 0;
+
+	font-size: min(0.8vw, 1.5vh);
+	line-height: 1.5vh;
+	height: 1.5vh;
+}
+
+#name-tab {
+	left: calc((95vw - 130vh - 40px) / 2);
+	width: 10vw;
+	background-color: #007eaa;
+	border: 10px solid #007eaa;
+	border-radius: 1.5vh 0 0 0;
+}
+
+#name-tab p {
+	margin-left: 1vh;
+}
+
+#progrowth-tab {
+	left: calc(52.5vw + 10px);
+	width: 5vw;
+	background-color: #0094be;
+	border: 10px solid #0094be;
+	border-radius: 0 1.5vh 0 0;
+}
+
+#progrowth-tab p {
+	margin-left: 0;
+}
+
+#greenwash-tab {
+	left: calc(57.5vw + 40px);
+	width: 11vw;
+	background-color: #0074ab;
+	border: 10px solid #0074ab;
+	border-radius: 0 1.5vh 0 0;
+}
+
+#greenwash-tab p {
+	margin-left: 0;
+}
+
+.upArrow, .downArrow {
+	position: absolute;
+	left: calc((65vh - 40px) / 2);
+	width: 40px;
+	height: 40px;
+	z-index: 100;
+	animation: flashing 1s infinite;
+}
+@keyframes flashing {
+	0% { opacity: 0.5; }
+	50% { opacity: 0; }
+	100% { opacity: 0.5; }
+}
+
+.upArrow {
+	top: 10px;
+	display: none;
+}
+
+.downArrow {
+	bottom: 10px;
+}
+
+.upArrowImg, .downArrowImg {
+	display: block;
+	width: 100%;
+	height: 100%;
 }

@@ -35,8 +35,9 @@ function switchPage(name) {
 window.onload = async function() {
 	switchPage("title-page");
 	try {
-		await renderPDF("./tests/indonesia.pdf", originalPdfContainer);
-		await renderPDF("./results/indonesia.pdf", highlightedPdfContainer);
+		await renderPDF("./pdfs/indonesia.pdf", originalPdfContainer);
+		await renderPDF("./pdfs/indonesia_pg.pdf", highlightedPdfContainer1);
+		await renderPDF("./pdfs/indonesia_ed.pdf", highlightedPdfContainer2);
 	} catch (error) {
 		console.error("Error:", error);
 	}

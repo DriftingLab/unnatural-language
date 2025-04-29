@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>(Un)Natural Language</title>
-	<link rel="stylesheet" type="text/css" href="./html_assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./html_assets/css/style.css?v=1.0">
 </head>
 <body>
 
@@ -34,12 +34,34 @@
 			<div id="pdf-close-button-container" onclick="closePDFViewer();">
 				<img id="pdf-close-button" src="./html_assets/images/close.png">
 			</div>
+			<div id="name-tab" class="tab">
+				<p>Indonesia (P500689)</p>
+			</div>
+			<div id="progrowth-tab" class="tab" onclick="switchDocument('progrowth');" style="cursor: pointer;">
+				<p>PRO-GROWTH</p>
+			</div>
+			<div id="greenwash-tab" class="tab" onclick="switchDocument('greenwash');" style="cursor: pointer;">
+				<p>ECOLOGICAL DOMINATION</p>
+			</div>
 			<div id="originalPdfViewer">
 				<div id="originalPdfContainer"></div>
+				<div class="upArrow">
+					<img class="upArrowImg" src="./html_assets/images/slide_up_icon.png">
+				</div>
+				<div class="downArrow">
+					<img class="downArrowImg" src="./html_assets/images/slide_down_icon.png">
+				</div>
 			</div>
 			
 			<div id="highlightedPdfViewer">
-				<div id="highlightedPdfContainer"></div>
+				<div id="highlightedPdfContainer1"></div>
+				<div id="highlightedPdfContainer2" style="display: none;"></div>
+				<div class="upArrow">
+					<img class="upArrowImg" src="./html_assets/images/slide_up_icon.png">
+				</div>
+				<div class="downArrow">
+					<img class="downArrowImg" src="./html_assets/images/slide_down_icon.png">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -82,10 +104,10 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-	<script src="./html_assets/js/process.js"></script>
-	<script src="./html_assets/js/main.js"></script>
-	<script src="./html_assets/js/titleAnimation.js"></script>
-	<script src="./html_assets/js/docAnimation.js"></script>
+	<script src="./html_assets/js/process.js?v=1.0"></script>
+	<script src="./html_assets/js/main.js?v=1.0"></script>
+	<script src="./html_assets/js/titleAnimation.js?v=1.0"></script>
+	<script src="./html_assets/js/docAnimation.js?v=1.0"></script>
 
 	<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.19.1/gradio.js"></script>
 	<!-- <gradio-app src="https://evaluate-metric-bertscore.hf.space"></gradio-app> -->

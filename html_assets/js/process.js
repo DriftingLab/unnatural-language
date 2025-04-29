@@ -1,7 +1,8 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.worker.min.js';
 
 const originalPdfContainer = document.getElementById('originalPdfContainer');
-const highlightedPdfContainer = document.getElementById('highlightedPdfContainer');
+const highlightedPdfContainer1 = document.getElementById('highlightedPdfContainer1');
+const highlightedPdfContainer2 = document.getElementById('highlightedPdfContainer2');
 
 let highlightPositions = [];
 
@@ -38,9 +39,6 @@ async function renderPDF(url, container) {
 				canvasContext: context,
 				viewport: viewport
 			}).promise;
-		}
-		if (container.id === 'highlightedPdfContainer') {
-			initSyncScroll();
 		}
 	} catch (error) {
 		console.error('Error rendering PDF:', error);
@@ -81,4 +79,19 @@ function initSyncScroll() {
 			activeContainer = null;
 		}, 50);
 	});
+}
+
+window.addEventListener('load', function() {initSyncScroll();});
+
+function switchDocument(name) {
+	if (name == "progrowth") {
+		document.getElementById('highlightedPdfContainer1').style.display = "block";
+		document.getElementById('highlightedPdfContainer2').style.display = "none";
+		document.getElementById('highlightedPdfViewer').style.border = "10px solid #0094be";
+	}
+	else {
+		document.getElementById('highlightedPdfContainer1').style.display = "none";
+		document.getElementById('highlightedPdfContainer2').style.display = "block";
+		document.getElementById('highlightedPdfViewer').style.border = "10px solid #0074ab";
+	}
 }

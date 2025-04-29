@@ -4,7 +4,7 @@ from python_modules.settings import *
 
 def apply_transparency(rgb, transparency):
 
-	transparency = transparency * 0.8 + 0.2
+	transparency = transparency * 0.9 + 0.1
 	
 	r = (1 - transparency) + rgb[0] * transparency
 	g = (1 - transparency) + rgb[1] * transparency
@@ -43,13 +43,13 @@ def highlight_pdf(filename, sentences_to_highlight):
 
 def custom_highlight_pdf(filename, sentences_to_highlight, values):
 
-	doc = pymupdf.open(f"tests/{filename}.pdf")
+	doc = pymupdf.open(f"tests/{filename}_original.pdf")
 
 	location_page = []
 	location_y = []
 
-	highlight_color = (0.91, 0.902, 0.225)
-	highlight_color = (0.004, 0.2, 0.471)
+	highlight_color = (0.004, 0.2, 0.471) #pg
+	# highlight_color = (0, 0.29, 0.361) #ed
 	transparency_scale = 1 / max(values)
 	
 	for page_num in range(len(doc)):
