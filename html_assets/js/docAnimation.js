@@ -218,7 +218,7 @@ const docSketch = function(s) {
 	}
 
 	s.windowResized = function() {
-		resizeCanvas(window.innerWidth, window.innerHeight);
+		s.resizeCanvas(window.innerWidth, window.innerHeight);
 		
 		fontSize = 0.02 * window.innerHeight;
 		padding = (0.037037 - 0.02) / 2 * window.innerHeight;

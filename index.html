@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>(Un)Natural Language</title>
-	<link rel="stylesheet" type="text/css" href="/html_assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./html_assets/css/style.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 	<div class="container" id="title-page">
 		<div id="title-canvas-container"></div>
 		<div id="background-container">
-			<img id="background" src="/html_assets/images/noise_bg_overlay.png">
+			<img id="background" src="./html_assets/images/noise_bg_overlay.png">
 		</div>
 		<h1 id="title" onclick="switchPage('document-page')">(Un)Natural Language</h1>
 		<p id="intro">An art software captures underlying ecological sabotage from documents</p>
@@ -26,13 +26,13 @@
 	</div>
 
 	<div class="container" id="document-page">
-		<div id="background-container">
-			<img id="background" src="/html_assets/images/blurred_bg.jpg">
+		<div id="document-background-container">
+			<img id="document-background" src="./html_assets/images/blurred_bg.jpg">
 		</div>
 		<div id="doc-canvas-container"></div>
 		<div id="pdf-container" style="display: none;">
 			<div id="pdf-close-button-container" onclick="closePDFViewer();">
-				<img id="pdf-close-button" src="/html_assets/images/close.png">
+				<img id="pdf-close-button" src="./html_assets/images/close.png">
 			</div>
 			<div id="originalPdfViewer">
 				<div id="originalPdfContainer"></div>
@@ -46,7 +46,7 @@
 
 	<div class="container" id="api-page">
 		<div id="background-container">
-			<img id="background" src="/html_assets/images/about_api_bg.png">
+			<img id="background" src="./html_assets/images/about_api_bg.png">
 		</div>
 		<div class="about-element" id="about-title">
 			<p>(Un)Natural Language</p>
@@ -61,7 +61,7 @@
 
 	<div class="container" id="about-page">
 		<div id="background-container">
-			<img id="background" src="/html_assets/images/about_api_bg.png">
+			<img id="background" src="./html_assets/images/about_api_bg.png">
 		</div>
 		<div class="about-element" id="about-title">
 			<p>(Un)Natural Language</p>
@@ -82,10 +82,10 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-	<script src="/html_assets/js/process.js"></script>
-	<script src="/html_assets/js/main.js"></script>
-	<script src="/html_assets/js/titleAnimation.js"></script>
-	<script src="/html_assets/js/docAnimation.js"></script>
+	<script src="./html_assets/js/process.js"></script>
+	<script src="./html_assets/js/main.js"></script>
+	<script src="./html_assets/js/titleAnimation.js"></script>
+	<script src="./html_assets/js/docAnimation.js"></script>
 
 	<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.19.1/gradio.js"></script>
 	<!-- <gradio-app src="https://evaluate-metric-bertscore.hf.space"></gradio-app> -->

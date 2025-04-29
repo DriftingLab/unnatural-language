@@ -56,7 +56,7 @@ nav a {
 
 /* ################################################################################ */
 
-#background-container {
+#background-container, #document-background-container {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -64,13 +64,13 @@ nav a {
 	right: 0;
 }
 
-#background-container {
+#background-container, #document-background-container {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 }
 
-#background {
+#background, #document-background {
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -110,7 +110,7 @@ nav a {
 	font-weight: normal;
 
 	color: white;
-	background: url("/html_assets/images/title_bg.png");
+	background: url("../images/title_bg.png");
 	background-size: cover;
 
 	cursor: pointer;
@@ -265,6 +265,10 @@ nav a {
 
 
 /* ################################################################################ */
+
+#document-background-container {
+	z-index: -100;
+}
 
 #doc-canvas-container {
 	z-index: -10;
