@@ -52,7 +52,7 @@ const titleSketch = function(s) {
 
 		let totalWidth = 0;
 
-		while (totalWidth < s.width + 1000) {
+		while (totalWidth < 2 * s.width) {
 			const boxWidth = s.random(100, 600);
 			
 			if (row.direction > 0) {

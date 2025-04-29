@@ -80,7 +80,7 @@ const docSketch = function(s) {
 
 		let totalWidth = 0;
 
-		while (totalWidth < s.width + 1000) {
+		while (totalWidth < 2 * s.width) {
 			const pick = s.int(s.random(0, textItems.length));
 			const text = textItems[pick];
 			const nation = nations[pick];
