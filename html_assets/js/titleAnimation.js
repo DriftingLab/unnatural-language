@@ -9,7 +9,7 @@ const titleSketch = function(s) {
 	var isEnabled = false;
 
 	s.setup = function() {
-		
+
 		s.createCanvas(window.innerWidth, window.innerHeight);
 
 		s.noStroke();
@@ -21,15 +21,15 @@ const titleSketch = function(s) {
 
 		for (let i = 0; i < rowCounts; i++) {
 			const direction = s.random() > 0.5 ? 1 : -1;
-			const speed = s.random(0.4, 2);
-			const y = 2 * i * barHeight + barHeight / 2;
+			const speed = s.random(0.4, 1.7);
+			const y = 3.2 * i * barHeight + barHeight / 2;
 			barRows.push({
 				direction,
 				speed,
 				y,
 				boxes: []
 			});
-			
+
 			populateRow(i);
 		}
 	}
@@ -54,29 +54,29 @@ const titleSketch = function(s) {
 
 		while (totalWidth < 2 * s.width) {
 			const boxWidth = s.random(100, 600);
-			
+
 			if (row.direction > 0) {
 				x -= boxWidth;
 			}
-			
+
 			const box = {
 				x,
 				width: boxWidth,
 				height: barHeight,
 				color: barColor
 			};
-			
+
 			row.boxes.push(box);
-			
+
 			if (row.direction < 0) {
 				x += boxWidth;
 			}
-			let gap = s.random(100, 600);
+			let gap = s.random(100, 450);
 			x += (row.direction > 0 ? -1 : 1) * gap;
 			totalWidth += boxWidth + gap;
 
 		}
-		
+
 	}
 
 	function updateRow(rowIndex) {
@@ -89,33 +89,33 @@ const titleSketch = function(s) {
 		if (row.direction > 0) {
 			while (row.boxes.length > 0 && row.boxes[0].x > s.width) {
 				row.boxes.shift();
-				const boxWidth = s.random(50, 1000);
+				const boxWidth = s.random(50, 600);
 				const lastBox = row.boxes[row.boxes.length - 1];
 				const newX = lastBox.x - (boxWidth + s.random(100, 600)) * row.direction;
-				
+
 				const box = {
 					x: newX,
 					width: boxWidth,
 					height: barHeight,
 					color: barColor
 				};
-				
+
 				row.boxes.push(box);
 			}
 		} else {
 			while (row.boxes.length > 0 && row.boxes[0].x + row.boxes[0].width < 0) {
 				row.boxes.shift();
-				const boxWidth = s.random(50, 1000);
+				const boxWidth = s.random(50, 600);
 				const lastBox = row.boxes[row.boxes.length - 1];
 				const newX = lastBox.x - (lastBox.width + s.random(100, 600)) * row.direction;
-				
+
 				const box = {
 					x: newX,
 					width: boxWidth,
 					height: barHeight,
 					color: barColor
 				};
-				
+
 				row.boxes.push(box);
 			}
 		}
@@ -136,7 +136,7 @@ const titleSketch = function(s) {
 		barHeight = 0.037037 * window.innerHeight;
 
 		for (let i = 0; i < barRows.length; i++) {
-			barRows[i].y = 2 * i * rowHeight + rowHeight / 2;
+			barRows[i].y = 3.2 * i * rowHeight + rowHeight / 2;
 		}
 	}
 };

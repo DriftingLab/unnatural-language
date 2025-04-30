@@ -120,7 +120,7 @@ const docSketch = function(s) {
 	var isEnabled = false;
 
 	s.setup = function() {
-		
+
 		s.createCanvas(window.innerWidth, window.innerHeight);
 		fontSize = 0.02 * window.innerHeight;
 		padding = (0.037037 - 0.02) / 2 * window.innerHeight;
@@ -137,7 +137,7 @@ const docSketch = function(s) {
 
 		for (let i = 0; i < numRows; i++) {
 			const direction = s.random() > 0.5 ? 1 : -1;
-			const speed = s.random(0.6, 2.4);
+			const speed = s.random(0.4, 1.6);
 			const y = margin + 2 * i * rowHeight + rowHeight / 2;
 			const gap = s.random(50, 150);
 			rows.push({
@@ -147,7 +147,7 @@ const docSketch = function(s) {
 				gap,
 				boxes: []
 			});
-			
+
 			populateRow(i);
 		}
 	}
@@ -179,11 +179,11 @@ const docSketch = function(s) {
 			currentNation = (currentNation + 1) % nations.length;
 			const boxWidth = s.textWidth(text) + padding * 2;
 			const boxHeight = fontSize + padding * 2;
-			
+
 			if (row.direction > 0) {
 				x -= boxWidth;
 			}
-			
+
 			const box = {
 				text,
 				x,
@@ -193,9 +193,9 @@ const docSketch = function(s) {
 				nation: nation,
 				name: docName
 			};
-			
+
 			row.boxes.push(box);
-			
+
 			if (row.direction < 0) {
 				x += boxWidth;
 			}
@@ -203,7 +203,7 @@ const docSketch = function(s) {
 			totalWidth += boxWidth + row.gap;
 
 		}
-		
+
 	}
 
 	function updateRow(rowIndex) {
@@ -220,12 +220,12 @@ const docSketch = function(s) {
 				const nation = nations[currentNation];
 				const docName = docNames[currentNation];
 				currentNation = (currentNation + 1) % nations.length;
-				
+
 				const boxWidth = s.textWidth(text) + padding * 2;
 				const boxHeight = fontSize + padding * 2;
 				const lastBox = row.boxes[row.boxes.length - 1];
 				const newX = lastBox.x - (boxWidth + row.gap) * row.direction;
-				
+
 				const box = {
 					text,
 					x: newX,
@@ -235,7 +235,7 @@ const docSketch = function(s) {
 					nation: nation,
 					name: docName
 				};
-				
+
 				row.boxes.push(box);
 			}
 		} else {
@@ -245,12 +245,12 @@ const docSketch = function(s) {
 				const nation = nations[currentNation];
 				const docName = docNames[currentNation];
 				currentNation = (currentNation + 1) % nations.length;
-		
+
 				const boxWidth = s.textWidth(text) + padding * 2;
 				const boxHeight = fontSize + padding * 2;
 				const lastBox = row.boxes[row.boxes.length - 1];
 				const newX = lastBox.x - (lastBox.width + row.gap) * row.direction;
-				
+
 				const box = {
 					text,
 					x: newX,
@@ -260,7 +260,7 @@ const docSketch = function(s) {
 					nation: nation,
 					name: docName
 				};
-				
+
 				row.boxes.push(box);
 			}
 		}
@@ -302,9 +302,9 @@ const docSketch = function(s) {
 		for (let row of rows) {
 			for (let box of row.boxes) {
 				if (
-					s.mouseX > box.x && 
-					s.mouseX < box.x + box.width && 
-					s.mouseY > row.y - box.height / 2 && 
+					s.mouseX > box.x &&
+					s.mouseX < box.x + box.width &&
+					s.mouseY > row.y - box.height / 2 &&
 					s.mouseY < row.y + box.height / 2
 				) {
 					currentHover = box;
@@ -342,7 +342,7 @@ const docSketch = function(s) {
 
 	s.windowResized = function() {
 		s.resizeCanvas(window.innerWidth, window.innerHeight);
-		
+
 		fontSize = 0.02 * window.innerHeight;
 		padding = (0.037037 - 0.02) / 2 * window.innerHeight;
 

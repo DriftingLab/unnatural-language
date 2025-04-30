@@ -160,27 +160,13 @@ nav a {
 	background-color: white;
 }
 
-/* ################################################################################ */
-
-.about-element {
-	color: #4a4d1c;
-	border-style: solid;
-	border-width: 5px;
-	border-color: #00ced9;
-	background-color: white;
-}
-
-.about-element p {
-	margin: 25px;
-	width: calc(100% - 50px);
-	height: 100%;
-	text-align: justify;
-}
+/* ################################################################################ API */
 
 #api-main {
 	margin-left: 5vw;
 	width: 64vw;
 	height: 64vh;
+
 }
 
 #api-main iframe {
@@ -196,7 +182,22 @@ nav a {
 	height: 8vh;
 }
 
-/* ################################################################################ */
+/* ################################################################################ about page */
+
+.about-element {
+	color: #4a4d1c;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #00ced9;
+	background-color: white;
+}
+
+.about-element p {
+	margin: 25px;
+	width: calc(100% - 50px);
+	/* height: 100%; */
+	text-align: justify;
+}
 
 #about-title {
 	display: block;
@@ -206,6 +207,7 @@ nav a {
 	margin-top: 5vh;
 	margin-bottom: 3.6vh;
 	margin-left: 5vw;
+	color: #387488;
 }
 
 #about-title p {
@@ -215,11 +217,12 @@ nav a {
 	font-size: 3.6vh;
 	line-height: 8vh;
 	text-align: center;
+
 }
 
 #about-main {
 	display: inline-block;
-	width: 64vw;
+	width: 60vw;
 	height: 36vh;
 	margin-left: 5vw;
 	margin-bottom: 3.6vh;
@@ -227,42 +230,83 @@ nav a {
 }
 
 #about-main p {
-	font-size: 1.5vh;
-	line-height: 2.25vh;
+	font-size: 1.6vh;
+	line-height: 3.3vh;
 }
 
 #about-credit {
 	display: inline-block;
-	width: 19vw;
+	width: 23vw;
 	height: 36vh;
 	margin-left: 5vw;
 	vertical-align: text-top;
+	text-align: start;
 }
 
-#about-credit p {
+#about-credittitle {
 	font-size: 2vh;
 	line-height: 3vh;
+	font-weight: bold;
+	color: #387488;
 }
 
-#about-empty {
-	display: inline-block;
-	width: 56vw;
-	height: 36vh;
-	margin-left: 5vw;
-	vertical-align: text-top;
+#about-credittext {
+	font-size: 1.6vh;
+	line-height: 3vh;
+	text-align: start;
 }
 
 #about-lexicon {
 	display: inline-block;
-	width: 27vw;
+	width: 48vw;
 	height: 36vh;
 	margin-left: 5vw;
 	vertical-align: text-top;
+	overflow-y: auto;
+}
+
+#about-tech {
+	display: inline-block;
+	width: 35vw;
+	height: 36vh;
+	margin-left: 5vw;
+	vertical-align: text-top;
+	overflow-y: auto;
+
+}
+
+#about-techtext {
+	font-size: 1.6vh;
+	line-height: 3vh;
+	text-align:justify;
 }
 
 #about-lexicon p {
 	font-size: 2vh;
 	line-height: 3vh;
+}
+
+#about-lexicon div {
+	margin-left: 1.7vw;
+}
+
+.lexicon-term {
+	font-size: 1.7vh;
+	font-weight: bold;
+}
+
+.lexicon-meta {
+	font-size: 1.5vh;
+	font-style: italic;
+}
+
+.lexicon-field {
+	font-size: 1.5vh;
+}
+
+.lexicon-definition {
+	font-size: 1.3vh;
+	line-height: 1.6vh;
 }
 
 

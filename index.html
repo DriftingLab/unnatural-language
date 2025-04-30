@@ -15,16 +15,20 @@
 		<a onclick="switchPage('about-page')">About</a>
 	</nav>
 
+<!-- HOME -->
 	<div class="container" id="title-page">
 		<div id="title-canvas-container"></div>
 		<div id="background-container">
 			<img id="background" src="./html_assets/images/noise_bg_overlay.png">
 		</div>
 		<h1 id="title" onclick="switchPage('document-page')">(Un)Natural Language</h1>
-		<p id="intro">An art software captures underlying ecological sabotage from documents</p>
+		<p id="intro">An art software captures underlying ecological sabotage from documents.</p>
 		<p id="author">Mou Peijing</p>
 	</div>
 
+
+
+<!-- DOCUMENT -->
 	<div class="container" id="document-page">
 		<div id="document-background-container">
 			<img id="document-background" src="./html_assets/images/noise_bg_document.png">
@@ -46,7 +50,7 @@
 			<div id="originalPdfViewer">
 				<div id="originalPdfContainer"></div>
 			</div>
-			
+
 			<div id="highlightedPdfViewer">
 				<div id="highlightedPdfContainer1"></div>
 				<div id="highlightedPdfContainer2" style="display: none;"></div>
@@ -61,6 +65,8 @@
 		</div>
 	</div>
 
+
+<!-- API -->
 	<div class="container" id="api-page">
 		<div id="background-container">
 			<img id="background" src="./html_assets/images/about_api_bg.png">
@@ -72,10 +78,13 @@
 			<iframe src="https://evaluate-metric-bertscore.hf.space"></iframe>
 		</div>
 		<div class="about-element" id="api-link">
-			<p>Github Link:</p>
+			<p>Github Link: <a href="https://github.com/DriftingLab/unnatural-language.git">https://github.com/DriftingLab/unnatural-language.git</a> </p>
 		</div>
 	</div>
 
+
+
+<!-- ABOUT -->
 	<div class="container" id="about-page">
 		<div id="background-container">
 			<img id="background" src="./html_assets/images/about_api_bg.png">
@@ -84,16 +93,72 @@
 			<p>(Un)Natural Language</p>
 		</div>
 		<div class="about-element" id="about-main">
-			<p>This is an art software that analyses public project documents through an ecological perspective. It is an Eco-linguistic system that explores the intersection of economics, language, and machine learning, unveiling the underlying language ideology in many infrastructure documents through an ambitious attempt to capture those pro-growth and greenwash sentences. This project builds a homemade dataset and utilizes a fine-tuned model to analyse formal documents like BP (business planning), IPO (initial public offering), and EA (environmental assessment). As a result, the software will automatically return a text analysis report. This system is trying to shift the focus of upgrowth economics to postgrowth ecological economics through the alternative approach to deploying machine learning technology and a language perspective.</p>
+			<p>(Un)Natural Language is an art software and an interactive online archive that examines and documents how words make worlds, capturing the underlying ecological sabotage from government project documents. The project weaves together ecology, linguistics, and computational technology to offer a new analytical lens on language use in urbanization. Through a custom-labeled dataset and a fine-tuned language model, the system classifies individual sentences in project appraisal documents, returning visualized analyses that reveal patterns of pro-growth and ecologically dominative discourse. Merging net art, environmental activism, and natural language processing, (Un)Natural Language offers a novel framework for interpreting public documents, uncovering hidden narratives of extractivism and economic expansion.</p>
 		</div>
 		<div class="about-element" id="about-credit">
-			<p>Credit</p>
+			<p id="about-credittitle">Credit
+			</p>
+			<p id="about-credittext">Artist: Mou Peijing <br><br>
+				Developer(Data & ML): Mou Peijing <br><br>
+				Developer(Web): Chenyue xdd Dai<br><br>
+				Visualization: Chenyue xdd Dai
+
+			</p>
+
 		</div>
-		<div class="about-element" id="about-empty">
-			<p></p>
+
+
+		<div class="about-element" id="about-tech">
+			<p id="about-credittitle">Techniques</p>
+			<p id="about-techtext">
+				This system includes three primary phases: data processing, labeling, and training. Public documents from The World Bank were collected, and segmented into sentences. Labeling was conducted by both manual annotation and heuristic labeling. The labeled dataset was exported to fine-tune a customized BERT model, modified with additional dropout and dense layers for multi-label text classification. Once trained, the model assigns category labels to new input sentences, and returns a confidence score for each labeled sentence based on its latent embeddings for visualization.
+			</p>
 		</div>
+
+
 		<div class="about-element" id="about-lexicon">
-			<p>Lexicon<br><br>Pro-growth<br>Greenwash<br>Eco-linguistic<br>Natural Language<br>(Un)Natural Language</p>
+			<p id="about-credittitle">Lexicon</p>
+
+			<div>
+				<span class="lexicon-term">Natural Language</span>
+				<span class="lexicon-meta"> n.</span>
+				<span class="lexicon-field"> [linguistics]</span>
+				<br>
+  				<span class="lexicon-definition">
+    				Language occurs naturally in a human community by a process of use, repetition, and change.
+				</span>
+				<br>
+				<br>
+				<span class="lexicon-term">Ecolinguistics</span>
+				<span class="lexicon-meta"> n.</span>
+				<span class="lexicon-field">[linguistics]</span><br>
+  				<span class="lexicon-definition">
+					A field of linguistic study that examines how language influences and reflects the ecological relationships between humans, other species, and the environment.				</span>
+				<br>
+				<br>
+				<span class="lexicon-term">NLP </span>
+				<span class="lexicon-meta"> abbr.</span>
+				<span class="lexicon-field">[computer science, artificial intelligence]</span><br>
+  				<span class="lexicon-definition">
+					Short for Natural Language Processing; a field that enables machines to process, analyze, and generate human language.				</span>
+				<br>
+				<br>
+				<span class="lexicon-term">Pro-growth</span>
+				<span class="lexicon-meta"> n.</span>
+				<span class="lexicon-field">[economics, social science]</span><br>
+  				<span class="lexicon-definition">
+					Describes language that naturalizes economic growth as an unquestioned societal good and frames it as inherently necessary or inevitable.				</span>
+				<br>
+				<br>
+				<span class="lexicon-term">Ecological domination </span>
+				<span class="lexicon-meta"> n.</span>
+				<span class="lexicon-field">[critical theory, environmental humanities]</span><br>
+  				<span class="lexicon-definition">
+					The ideological and material subjugation of ecosystems through managerial, developmental, or extractive logics rooted in anthropocentric worldviews.				</span>
+			</div>
+			<br>
+			<br>
+
 		</div>
 	</div>
 
