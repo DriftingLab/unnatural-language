@@ -11,102 +11,57 @@ const docSketch = function(s) {
 		"Morocco Water Security and Resilience Program",
 		"Indonesia Universal Health Coverage Development Policy Loan",
 		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan",
-		"Viet Nam Binh Duong Province's Water Environment Improvement Project",
-		"Tuvalu Pacific Islands Regional Oceanscape Program—Second Phase For Economic Resilience",
-		"Türkiye Flood And Drought Management Project",
-		"Turkey Resilient Landscape Integration Project (TULIP)",
-		"Suriname Saramacca Canal System Rehabilitation Project",
 		"Albania Clean And Resilient Environment For Blue Sea Project",
 		"Argentine Republic Climate Resilient Infrastructure For Urban Flood Risk Management Project",
-		"Brazil The Espírito Santo Water Security Management Project",
+		"Brazil Pernambuco Rural Water and Sanitation Project",
+		"Brazil Espírito Santo Water Security Management Project",
 		"Brazil Ceará Water Security And Governance Project",
 		"Chile Water Transition Program",
 		"China Yangtze River Protection And Ecological Restoration Program",
-		"Chile Water Transition Program",
 		"China Yellow River Basin Ecological Protection And Environmental Pollution Control Program",
-		"India Shimla-Himachal Pradesh Water Supply And Sewerage Services Improvement",
+		"India Tamil Nadu Climate Resilient Urban Development Program",
 		"India Assam Inland Water Transport Project",
 		"India Rejuvenating Watersheds For Agricultural Resilience Through Innovative Development",
-		"India Tamil Nadu Climate Resilient Urban Development Program",
-		"India Uttarakhand Climate Responsive Rainfed Farming Project",
-		"Kyrgyz Republic Water Supply And Sanitation Universal Access Program",
-		"Sri Lanka Climate Resilience Multiphase Programmatic Approach",
-		"Mali Mali Water Security Project",
-		"Pakistan Second Karachi Water And Sewerage Services Improvement Project",
-		"Panama Support For The National Indigenous Peoples Development Plan Project",
-		"Somalia Somali Sustainable Fisheries Development “Badmaal” Project",
-		"Senegal Integrated Water Security And Sanitation Project",
-		"Poland Odra-Visula Flood Management Project",
-		"Peru  Irrigation For Climate Resilient Agriculture Project",
-		"Paraguay Asuncion Riverfront Urban Resilience Project"
+		"India Shimla-Himachal Pradesh Water Supply And Sewerage Services Improvement",
+		"Peru Irrigation For Climate Resilient Agriculture Project"
 	];
 
 	const nations = [
 		"morocco",
 		"indonesia",
 		"brazil",
-		"viet nam",
-		"tuvalu",
-		"türkiye",
-		"turkey",
-		"suriname",
 		"albania",
 		"argentine",
-		"brazil",
-		"brazil",
+		"brazil2",
+		"brazil3",
+		"brazil4",
 		"chile",
-		"china",
-		"chile",
-		"china",
-		"india",
-		"india",
-		"india",
-		"india",
-		"india",
-		"kyrgyz",
-		"sri",
-		"mali",
-		"pakistan",
-		"panama",
-		"somalia",
-		"senegal",
-		"poland",
-		"peru",
-		"paraguay"
+		"china1",
+		"china2",
+		"india1",
+		"india2",
+		"india3",
+		"india4",
+		"peru"
 	];
 
 	const docNames = [
 		"Morocco (P179192)",
 		"Indonesia (P500689)",
 		"Brazil (P179182)",
-		"Viet Nam (P173716)",
-		"Tuvalu",
-		"Türkiye",
-		"Turkey",
-		"Suriname",
-		"Albania",
-		"Argentine",
-		"Brazil",
-		"Brazil",
-		"Chile",
-		"China",
-		"Chile",
-		"China",
-		"India",
-		"India",
-		"India",
-		"India",
-		"India",
-		"Kyrgyz",
-		"Sri Lanka",
-		"Mali",
-		"Pakistan",
-		"Panama",
-		"Somalia",
-		"Senegal",
-		"Poland",
-		"Peru",
-		"Paraguay"
+		"Albania (P176163)",
+		"Argentine (P178534)",
+		"Brazil (P180430)",
+		"Brazil (P176982)",
+		"Brazil (P165055)",
+		"Chile (P179117)",
+		"China (P171644)",
+		"China (P178401)",
+		"India (P179189)",
+		"India (P157929)",
+		"India (P172187)",
+		"India (P174732)",
+		"Peru (P179037)"
 	];
 
 	var currentNation = 0;
@@ -325,18 +280,10 @@ const docSketch = function(s) {
 			pdfViewer.style.display = 'block';
 			nav.style.display = 'none';
 			viewerOpened = true;
-			if (currentHover.nation == 'brazil' || currentHover.nation == 'indonesia' || currentHover.nation == 'morocco') {
-				renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
-				renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
-				renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
-				docNameElement.textContent = currentHover.name;
-			}
-			else {
-				renderPDF(`./pdfs/indonesia.pdf`, originalPdfContainer);
-				renderPDF(`./pdfs/indonesia_pg.pdf`, highlightedPdfContainer1);
-				renderPDF(`./pdfs/indonesia_ed.pdf`, highlightedPdfContainer2);
-				docNameElement.textContent = currentHover.name;
-			}
+			renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
+			renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
+			renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
+			docNameElement.textContent = currentHover.name;
 		}
 	}
 
