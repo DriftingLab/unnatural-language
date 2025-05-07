@@ -41,15 +41,13 @@ def highlight_pdf(filename, sentences_to_highlight):
 	doc.save(f"results/{filename}.pdf")
 	doc.close()
 
-def custom_highlight_pdf(filename, sentences_to_highlight, values):
+def custom_highlight_pdf(filename, sentences_to_highlight, values, color):
 
 	doc = pymupdf.open(f"tests/{filename}_original.pdf")
 
 	location_page = []
 	location_y = []
 
-	highlight_color = (0.004, 0.2, 0.471) #pg
-	# highlight_color = (0, 0.29, 0.361) #ed
 	transparency_scale = 1 / max(values)
 	
 	for page_num in range(len(doc)):
@@ -58,7 +56,7 @@ def custom_highlight_pdf(filename, sentences_to_highlight, values):
 		page.draw_rect(page.rect, color=(1, 1, 1), fill=(1, 1, 1))
 		for i, sentence in enumerate(sentences_to_highlight):
 			transparency = values[i]
-			actual_highlight_color = apply_transparency(highlight_color, transparency * transparency_scale)
+			actual_highlight_color = apply_transparency(color, transparency * transparency_scale)
 			instances = list(page.search_for(sentence))
 			if (len(instances) > 0):
 				y_positions = []
