@@ -9,7 +9,7 @@ const docSketch = function(s) {
 
 	const textItems = [
 		"Morocco Water Security and Resilience Program",
-		"Indonesia Universal Health Coverage Development Policy Loan",
+		// "Indonesia Universal Health Coverage Development Policy Loan",
 		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan",
 		"Albania Clean And Resilient Environment For Blue Sea Project",
 		"Argentine Republic Climate Resilient Infrastructure For Urban Flood Risk Management Project",
@@ -28,7 +28,7 @@ const docSketch = function(s) {
 
 	const nations = [
 		"morocco",
-		"indonesia",
+		// "indonesia",
 		"brazil",
 		"albania",
 		"argentine",
@@ -47,7 +47,7 @@ const docSketch = function(s) {
 
 	const docNames = [
 		"Morocco (P179192)",
-		"Indonesia (P500689)",
+		// "Indonesia (P500689)",
 		"Brazil (P179182)",
 		"Albania (P176163)",
 		"Argentine (P178534)",
