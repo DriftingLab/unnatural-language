@@ -9,8 +9,7 @@ const docSketch = function(s) {
 
 	const textItems = [
 		"Morocco Water Security and Resilience Program",
-		// "Indonesia Universal Health Coverage Development Policy Loan",
-		"Brazil Rio de Janeiro Fiscal Management and Sustainable Development Policy Loan",
+		"Poland Odra-vistula Flood Management Project",
 		"Albania Clean And Resilient Environment For Blue Sea Project",
 		"Argentine Republic Climate Resilient Infrastructure For Urban Flood Risk Management Project",
 		"Brazil Pernambuco Rural Water and Sanitation Project",
@@ -26,29 +25,28 @@ const docSketch = function(s) {
 		"Peru Irrigation For Climate Resilient Agriculture Project"
 	];
 
+	//nations need to the same name as pg/eco files
 	const nations = [
 		"morocco",
-		// "indonesia",
-		"brazil",
+		"poland",
 		"albania",
 		"argentine",
-		"brazil2",
-		"brazil3",
-		"brazil4",
+		"brazil's rural water and sanitation",
+		"Brazil_Espirito_Santo_Water Security",
+		"Brazil-3019",
 		"chile",
-		"china1",
-		"china2",
-		"india1",
-		"india2",
-		"india3",
-		"india4",
+		"China-Yangtze-River",
+		"china's yellow river basin",
+		"india-008",
+		"india-4264",
+		"india-2565",
+		"india-3632",
 		"peru"
 	];
 
 	const docNames = [
 		"Morocco (P179192)",
-		// "Indonesia (P500689)",
-		"Brazil (P179182)",
+		"Poland (PAD1203)",
 		"Albania (P176163)",
 		"Argentine (P178534)",
 		"Brazil (P180430)",
@@ -280,9 +278,9 @@ const docSketch = function(s) {
 			pdfViewer.style.display = 'block';
 			nav.style.display = 'none';
 			viewerOpened = true;
-			renderPDF(`./pdfs/${currentHover.nation}.pdf`, originalPdfContainer);
-			renderPDF(`./pdfs/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
-			renderPDF(`./pdfs/${currentHover.nation}_ed.pdf`, highlightedPdfContainer2);
+			renderPDF(`./pdfs_for_web_visual/${currentHover.nation}.pdf`, originalPdfContainer);
+			renderPDF(`./pdfs_for_web_visual/${currentHover.nation}_pg.pdf`, highlightedPdfContainer1);
+			renderPDF(`./pdfs_for_web_visual/${currentHover.nation}_eco.pdf`, highlightedPdfContainer2);
 			docNameElement.textContent = currentHover.name;
 		}
 	}
