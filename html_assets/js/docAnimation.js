@@ -25,12 +25,12 @@ const docSketch = function(s) {
 		"Peru Irrigation For Climate Resilient Agriculture Project"
 	];
 
-	//nations need to the same name as pg/eco files
+	//nations need to the same name as pg/eco files, (case sensitive)
 	const nations = [
 		"morocco",
 		"Poland",
-		"albania",
-		"argentine",
+		"ALBANIA",
+		"ARGENTINE",
 		"brazil's rural water and sanitation",
 		"Brazil_Espirito_Santo_Water Security",
 		"Brazil-3019",
