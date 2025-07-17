@@ -28,7 +28,7 @@ const docSketch = function(s) {
 	//nations need to the same name as pg/eco files
 	const nations = [
 		"morocco",
-		"poland",
+		"Poland",
 		"albania",
 		"argentine",
 		"brazil's rural water and sanitation",
@@ -38,9 +38,9 @@ const docSketch = function(s) {
 		"China-Yangtze-River",
 		"china's yellow river basin",
 		"india-008",
-		"india-4264",
-		"india-2565",
-		"india-3632",
+		"India-4264",
+		"India-2565",
+		"India-3632",
 		"peru"
 	];
 
